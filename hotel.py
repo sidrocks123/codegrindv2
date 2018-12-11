@@ -219,7 +219,7 @@ input[type=submit]:hover {
     
     
     <label for="Description">Description</label>
-    <textarea id="disc" name="desc" placeholder="Description about the expense....." style="height:100px" value=${desc}></textarea>
+    <textarea id="disc" name="desc" placeholder="Description about the expense....." style="height:100px">${desc}</textarea>
     
 
     <input type="submit" value="Submit">
