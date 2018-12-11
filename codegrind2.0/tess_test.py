@@ -57,8 +57,15 @@ def get_string(img_path, method):
     # Apply threshold to get image with only b&w (binarization)
     img = cv2.threshold(img, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)[1]
 
-    # Save the filtered image in the output directory
+    # used for applying histogram equalizaion
+    if method == 8:
+        #clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8,8))
+        #img = clahe.apply(img)
+        img = cv2.equalizeHist(img)
+        method = 6
+    
     img = apply_threshold(img, method)
+    # Save the filtered image in the output directory
     save_path = os.path.join(output_path, file_name + "_filter_" + str(method) + ".jpg")
     cv2.imwrite(save_path, img)
 
@@ -70,8 +77,8 @@ if __name__ == "__main__":
 	#img_path = 'C:\\Pune_Hyderabad.ETicket-1.png'
 	#img_path = 'C:\\Pune_Hyderabad.ETicket.pdf'
 	img_path = 'C:\\images\\boarding_pass.jpg'
-	final = get_string(img_path, 6)
+	final = get_string(img_path, 8)
 	text_file = open("D:\\test\\Output.txt", "w")
 	text_file.write(final)
-	text_file.close()
+	text_file.close() 
 	print("Successful")
