@@ -1,0 +1,12 @@
+totalamt = fare
+mname=merchant
+fclass = travelling_class
+tno=ticket_num
+sdatey = syy
+sdatem = smm
+sdated = sdd
+edatey = eyy
+edatem = emm
+edated = edd
+fromloc = from_loc
+toloc = to_loc
