@@ -229,39 +229,32 @@ input[type=submit]:hover {
 </body>
 </html>
 
-
-
-
-
-
-
-
-
-
-
 """)
-year= 1995
-month=10
-day=24
-totalamt=2000
-totaldays=100
-dailyamt=2000
-ramt=2000
-mname='Indigo'
+year= 2018
+month=7
+day=8
+totalamt=2468
+totaldays=1
+dailyamt=totalamt
+ramt=totalamt
+mname='JetAirways'
 fclass='economy'
-tno=123456
-sdatey=2019
-sdatem=10
-sdated=21
-edatey=2019
-edatem=10
-edated=21
+tno=5892561816542
+sdatey=2018
+sdatem=7
+sdated=8
+edatey=2018
+edatem=7
+edated=8
+fromloc='Pune'
+toloc='Hyd'
 eloc="INDIA"
-desc="I am travelling to pune from hyd on 21 jan"
+
 app = Flask(__name__)
 dt = date(year, month, day)
 sdt=date(sdatey,sdatem,sdated)
 edt=date(edatey,edatem,edated)
+desc='Ticket from '+ fromloc +' from ' + toloc + '  on   ' + str(dt)
 
 @app.route('/')
 def homepage():
